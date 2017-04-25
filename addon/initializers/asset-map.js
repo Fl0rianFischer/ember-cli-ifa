@@ -2,10 +2,8 @@
 import Ember from 'ember';
 
 export function initialize(app) {
-  let assetMapFile = window && window.__assetMapFilename__;
-
   const promise = new Ember.RSVP.Promise((resolve, reject) => {
-    Ember.$.getJSON(assetMapFile, resolve).fail(reject);
+    Ember.$.getJSON(window.__assetMapPlaceholder__, resolve).fail(reject);
   });
 
   promise.then((map = {}) => {
