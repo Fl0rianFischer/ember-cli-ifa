@@ -1,6 +1,5 @@
 /* global window, __assetMapFilename__ */
 import Ember from 'ember';
-import AssetMap from '../services/asset-map';
 
 export function initialize(app) {
   let assetMapFile = window && window.__assetMapFilename__;
