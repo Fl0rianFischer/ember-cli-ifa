@@ -2,6 +2,8 @@
 import Ember from 'ember';
 
 export function initialize(app) {
+  if (!window.__assetMapPlaceholder__) return;
+  
   const promise = new Ember.RSVP.Promise((resolve, reject) => {
     Ember.$.getJSON(window.__assetMapPlaceholder__, resolve).fail(reject);
   });
